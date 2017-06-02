@@ -1,0 +1,42 @@
+<html>
+  <head>
+    
+  
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <div id="chart_div"  style="width: 900px; height: 300px;"><div>
+
+
+<script type='text/javascript'>//<![CDATA[
+
+google.load('visualization', '1', {packages: ['corechart', 'bar']});
+google.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+  var data = google.visualization.arrayToDataTable([
+        ['Yes', 'No', { role: 'style' }],
+        ['Yes' , 945, 'blue'],
+        ['No', 36345, 'green'],
+      ]);
+
+      var options = {
+        title: 'Confirmed Job Offer',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Number of Borrowers',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Outcome'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+
+
+    }
+
+</script>

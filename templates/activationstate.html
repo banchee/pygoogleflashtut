@@ -1,0 +1,43 @@
+{% block body %}
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <div id="chart_div"  style="width: 900px; height: 300px;"><div>
+
+
+<script type='text/javascript'>//<![CDATA[
+
+google.load('visualization', '1', {packages: ['corechart', 'bar']});
+google.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+  var data = google.visualization.arrayToDataTable([
+        ['Active', 'Pending', { role: 'style' }],
+        ['Active' , 17738, 'gold'],
+        ['Pending', 1577, 'silver'],
+      ]);
+
+      var options = {
+        title: 'ACtivation State',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Activation State',
+          minValue: 0
+        },
+        vAxis: {
+          title: ''
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+
+
+    }
+
+</script>
+
+
+{% endblock %}
+ 
