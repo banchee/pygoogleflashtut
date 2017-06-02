@@ -32,10 +32,24 @@ def index2():
     # rates = getExchangeRates()
     return render_template('activationstate.html', **locals())
 
+
 @app.route("/test3")
 def index3():
     # rates = getExchangeRates()
     return render_template('test3.html', **locals())
+
+
+@app.route("/test4")
+def index4():
+    # rates = getExchangeRates()
+    return render_template('test4.html', **locals())
+
+
+@app.route("/test5")
+def index5():
+    # rates = getExchangeRates()
+    return render_template('test5.html', **locals())
+
 
 @app.route("/main")
 def hello():
