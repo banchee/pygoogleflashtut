@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import os
 import json
-import urllib2
+import urllib.request as urllib2
 
 
 tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -27,7 +27,17 @@ def index():
     return render_template('test.html', **locals())
 
 
-@app.route("/hello")
+@app.route("/activationstate")
+def index2():
+    # rates = getExchangeRates()
+    return render_template('activationstate.html', **locals())
+
+@app.route("/test3")
+def index3():
+    # rates = getExchangeRates()
+    return render_template('test3.html', **locals())
+
+@app.route("/main")
 def hello():
     return "Hello World!"
 
