@@ -1,0 +1,48 @@
+{% block body %}
+
+<html>
+  <head>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <div id="chart_div"  style="width: 1800px; height: 600px;"><div>
+
+
+<script type='text/javascript'>//<![CDATA[
+
+google.load('visualization', '1', {packages: ['corechart', 'bar']});
+google.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+var data = google.visualization.arrayToDataTable([
+        ['Distribution of NaNs/NaTs and Blanks for Profiles and Applications','Created At' ,'Current Job' , 'Date of Birth','Last Activity At','Last Login At', 'Last Logout At','Period From','Period To',  { role: 'annotation' } ],
+        ['NaNs/NaTs Profiles', 0, 1, 1, 64, 1692, 3264, 9427, 1952, 4322],
+        ['NaNs/NaTs Applications', 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+        ['Blanks in Profiles', 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+        ['Blanks in Applications', 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]);
+
+      var options = {
+        width: 600,
+        height: 400,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+
+
+    }
+
+</script>
+ </head>
+  <body>
+    <div id="regions_div" style="width: 1200px; height: 800px;"></div>
+  </body>
+</html>
+
+
+{% endblock %}
+
