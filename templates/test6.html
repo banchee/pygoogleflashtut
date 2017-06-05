@@ -1,0 +1,48 @@
+{% block body %}
+
+<html>
+  <head>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <div id="chart_div"  style="width: 1800px; height: 600px;"><div>
+
+
+<script type='text/javascript'>//<![CDATA[
+
+google.load('visualization', '1', {packages: ['corechart', 'bar']});
+google.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+var data = google.visualization.arrayToDataTable([
+        ['Employment Type', 'Permanent', 'Self-Employed', 'Contract', 'Internship', 'Volunteer', 'Blank', { role: 'annotation' } ],
+        ['Employed Full Time', 5668, 271, 573, 151, 14, 6213, 0],
+        ['Employed Part Time', 215, 66, 102, 58, 19, 0, 0],
+        ['Unemployed', 0, 0, 0, 0, 0, 0, 4115],
+        ['No data', 0, 0, 0, 0, 0, 0, 1850]
+      ]);
+
+      var options = {
+        width: 600,
+        height: 400,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+
+
+    }
+
+</script>
+ </head>
+  <body>
+    <div id="regions_div" style="width: 1200px; height: 800px;"></div>
+  </body>
+</html>
+
+
+{% endblock %}
+
