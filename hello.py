@@ -50,6 +50,11 @@ def index5():
     # rates = getExchangeRates()
     return render_template('test5.html', **locals())
 
+@app.route("/test6")
+def index6():
+    # rates = getExchangeRates()
+    return render_template('test6.html', **locals())
+
 
 @app.route("/main")
 def hello():
