@@ -14,11 +14,11 @@ google.setOnLoadCallback(drawBasic);
 function drawBasic() {
 
 var data = google.visualization.arrayToDataTable([
-        ['Distribution of NaNs/NaTs and Blanks for Profiles and Applications','Created At' ,'Current Job' , 'Date of Birth','Last Activity At','Last Login At', 'Last Logout At','Period From','Period To',  { role: 'annotation' } ],
-        ['NaNs/NaTs Profiles', 0, 1, 1, 64, 1692, 3264, 9427, 1952, 4322],
-        ['NaNs/NaTs Applications', 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ['Blanks in Profiles', 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ['Blanks in Applications', 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ['Employment Type', 'Permanent', 'Self-Employed', 'Contract', 'Internship', 'Volunteer', 'Blank', { role: 'annotation' } ],
+        ['Employed Full Time', 5668, 271, 573, 151, 14, 6213, 0],
+        ['Employed Part Time', 215, 66, 102, 58, 19, 0, 0],
+        ['Unemployed', 0, 0, 0, 0, 0, 0, 4115],
+        ['No data', 0, 0, 0, 0, 0, 0, 1850]
       ]);
 
       var options = {
@@ -45,3 +45,4 @@ var data = google.visualization.arrayToDataTable([
 
 
 {% endblock %}
+
